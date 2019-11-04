@@ -34,4 +34,6 @@ class Event < ApplicationRecord
     return true
   end
 
+
+
 end
