@@ -105,6 +105,18 @@ En production, il faudra paramétrer un serveur SMTP dans /config/environment.rb
 
 ######
 
+
+
+
+
+#### controller
+rails g controller events
+creer Crud et views
+rails routes
+rails server
+
+#####
+
 * Ruby version
 
 * System dependencies

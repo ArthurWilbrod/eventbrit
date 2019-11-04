@@ -8,31 +8,30 @@ class Event < ApplicationRecord
 
   #validation
 
-  #validates :start_date, presence: true, date_cannot_be_in_the_past: true
-  #validates :duration, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1}
+  validates :start_date, presence: true
+  validate :date_cannot_be_in_the_past
+  validates :duration, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1}
+  validate :divisible_by_five
 
   validates :title, presence: true, length: { in: 3..140 }
   validates :description, presence: true, length: { in: 10..10000 }
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 1000}
   validates :location, presence: true
 
-  #multiple de 5
-  def is_a_multiple_of_5
-   if (duration >0)
-     if (duration%5) == 0
-    else
-      errors.add(:duration, "multiple of 5")
-     end
-   end
+
+  def divisible_by_five
+      if (self.duration % 5) != 0
+        self.errors[:base] << "Number must be divisible by 5!"
+      end
   end
 
   def date_cannot_be_in_the_past
-    if start_date.present? && start_date < Date.today
-      errors.add(:expiration_date, "can't be in the past")
-      return false
+    if self.start_date.present? && self.start_date < Date.today
+      self.errors[:base] << "Date must be in the futur"
     end
-    return true
   end
+
+
 
 
 
