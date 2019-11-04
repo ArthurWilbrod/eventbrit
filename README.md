@@ -82,6 +82,20 @@ heroku run rails db:migrate #optionnel si tu as une migration à migrer
 heroku apps:destroy
 
 ####
+
+
+
+###### Push
+
+push on giit or commit on git then push on heroku
+
+
+######
+
+###### rails g mailer UserMailer
+rails g mailer UserMailer
+
+######
 * Ruby version
 
 * System dependencies
