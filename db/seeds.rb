@@ -25,6 +25,6 @@ end
 puts "Event created"
 
 10.times do
-	Participation.create(event_id:Event.find(rand(1..10)).id , user_id:User.find(rand(1..10)).id )
+	Attendance.create(event_id:Event.find(rand(1..10)).id , user_id:User.find(rand(1..10)).id )
 end
 puts "Participation created"
