@@ -92,10 +92,19 @@ push on giit or commit on git then push on heroku
 
 ######
 
-###### rails g mailer UserMailer
+###### Mailleur !!!!
 rails g mailer UserMailer
 
+ajout du mail app/views/user_mailer/welcome_email.html.erb
+
+depuis un model : UserMailer.welcome_email(user).deliver_now
+
+En développement, gem "letter_opener" pour visualiser dans son navigateur le rendu visuel des e-mails envoyés
+
+En production, il faudra paramétrer un serveur SMTP dans /config/environment.rb
+
 ######
+
 * Ruby version
 
 * System dependencies
