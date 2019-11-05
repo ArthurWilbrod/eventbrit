@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #require 'database_cleaner' #permet de réinitialiser la base à chaque relance du seed
-
+DatabaseCleaner.allow_production = true
+DatabaseCleaner.allow_remote_database_url = true
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
+
 
 10.times do
 	fname=Faker::Name.first_name
