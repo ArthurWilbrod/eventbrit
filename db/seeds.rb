@@ -14,7 +14,7 @@ DatabaseCleaner.clean
 10.times do
 	fname=Faker::Name.first_name
 	lname=Faker::Name.last_name
-	User.create(email:fname+"."+lname+"@yopmail.com", first_name:fname , last_name:lname )
+	User.create(email:fname+"."+lname+"@yopmail.com", first_name:fname , last_name:lname, password:"qwerty", description:  Faker::Quote.yoda )
 end
 puts "Users created"
 

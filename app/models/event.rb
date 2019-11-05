@@ -2,8 +2,8 @@ class Event < ApplicationRecord
 
   # dependance
 
-  has_many :participations
-  has_many :users, through: :participations
+  has_many :attendances
+  has_many :users, through: :attendances
   belongs_to :user
 
   #validation

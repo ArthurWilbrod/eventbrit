@@ -103,6 +103,11 @@ En développement, gem "letter_opener" pour visualiser dans son navigateur le re
 
 En production, il faudra paramétrer un serveur SMTP dans /config/environment.rb
 
+ATTENTION donner a heroku tes cles  heroku : heroku config:set SENDGRID_LOGIN='apikey'
+ heroku config:set SENDGRID_LOGIN='apikey'
+ SENDGRID_PWD='SG.SmVYzPMwN56MYBFKDy7mS4FwS2RWcH8Amahdc'
+
+
 ######
 
 

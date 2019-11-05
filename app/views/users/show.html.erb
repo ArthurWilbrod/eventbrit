@@ -1,0 +1,24 @@
+
+<% user = User.find(current_user.id)%>
+
+<div class="card">
+  <div class="card-header">
+
+  </div>
+  <div class="card-body">
+    <h5 class="card-title" ><%= user.first_name%><%= user.last_name%></h5>
+    <p class="card-text"><%= user.description%></p>
+    <p class="card-text"><%= user.email%></p>
+    <a class="btn btn-primary"<%= link_to "Back", events_path %></a>
+  </div>
+</div>
+
+<%events= Event.where(user_id: current_user.id)%>
+<%events.all.each do |event|%>
+<div class="col-lg-4">
+  <img class="rounded-circle" src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="Generic placeholder image" width="140" height="140">
+  <h2><%=event.title%></h2>
+  <p><%=event.description%></p>
+  <p><a class="btn btn-secondary" role="button"<%= link_to "View details", event_path(event.id)%></a></p>
+</div><!-- /.col-lg-4 -->
+<%end%>
